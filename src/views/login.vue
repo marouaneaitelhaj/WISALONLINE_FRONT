@@ -1,14 +1,5 @@
 <template>
   <navbar></navbar>
-  <!--
-    This component uses @tailwindcss/divs
-  
-    yarn add @tailwindcss/divs
-    npm install @tailwindcss/divs
-  
-    plugins: [require('@tailwindcss/divs')]
-  -->
-
   <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-lg">
       <h1 class="text-center text-2xl font-bold blue-txt sm:text-3xl">

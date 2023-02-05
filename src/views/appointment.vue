@@ -71,11 +71,16 @@ export default {
       show: false,
       hour: [],
       hourselected: '',
-      dataappointment: []
+      dataappointment: [],
+      id: ''
     }
   },
   mounted() {
     this.read()
+    axios.post('http://localhost/wiSalonline/public/FromKeyToId', [document.cookie.split("=")[1]])
+      .then(response => {
+        this.id = response.data[0].id
+      })
   },
   methods: {
     read() {
@@ -94,10 +99,10 @@ export default {
         })
     },
     now() {
-      axios.post('http://localhost/wiSalonline/public/api/Cappointments', [this.day, this.hourselected, "sssssssss", "sssssssss"])
-      .then(response => {
-        this.read()
-      })
+      axios.post('http://localhost/wiSalonline/public/api/Cappointments', [this.day, this.hourselected, this.id])
+        .then(response => {
+          console.log(response.data)
+        })
     }
   },
   components: {

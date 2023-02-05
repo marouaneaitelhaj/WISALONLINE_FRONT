@@ -23,13 +23,13 @@
 
 
               <li>
-                <router-link class="text-gray-500 transition hover:text-gray-500/75" to="/">
+                <router-link class="text-black font-semibold transition hover:text-gray-500/75" to="/">
                   Home
                 </router-link>
               </li>
 
               <li>
-                <router-link class="text-gray-500 transition hover:text-gray-500/75" to="/appointment">
+                <router-link class="text-black font-semibold transition hover:text-gray-500/75" to="/appointment">
                   Appointment
                 </router-link>
               </li>
@@ -38,13 +38,13 @@
 
           <div v-if="show" class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
-              <router-link class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow" to="/login">
+              <router-link class="rounded-md blue-bag px-5 py-2.5 text-sm font-medium text-white shadow" to="/login">
                 Login
               </router-link>
 
 
               <div class="hidden sm:flex">
-                <router-link class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                <router-link class="rounded-md text-white  red-bag px-5 py-2.5 text-sm font-medium text-teal-600"
                   to="/register">
                   Register
                 </router-link>
@@ -53,7 +53,7 @@
 
 
             <div class="block md:hidden">
-              <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+              <button class="rounded red-bag p-2 text-gray-600 transition hover:text-gray-600/75">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -63,7 +63,7 @@
           </div>
           <div v-if="!show" class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
-              <button class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow" v-on:click="logout">
+              <button class="rounded-md blue-bag px-5 py-2.5 text-sm font-medium text-white shadow" v-on:click="logout">
                 Logout
               </button>
             </div>

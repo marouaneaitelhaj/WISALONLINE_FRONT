@@ -11,7 +11,7 @@
 
   <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-lg">
-      <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
+      <h1 class="text-center text-2xl font-bold blue-bag sm:text-3xl">
         Get started today
       </h1>
 
@@ -61,7 +61,7 @@
         </div>
 
         <button v-on:click="signup"
-          class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+          class="block w-full rounded-lg blue-bag px-5 py-3 text-sm font-medium text-white">
           Sign up
         </button>
 

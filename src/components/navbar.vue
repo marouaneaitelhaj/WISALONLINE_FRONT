@@ -4,7 +4,6 @@
       <div class="flex h-16 items-center justify-between">
         <div class="flex-1 md:flex md:items-center md:gap-12">
           <router-link to="/" class="block text-teal-600">
-            <span class="sr-only">Home</span>
             <p class="font-black blue-txt  text-3xl">WiBarber</p>
           </router-link>
         </div>
@@ -20,6 +19,11 @@
               <li>
                 <router-link class="text-black font-semibold transition hover:text-gray-500/75" to="/appointment">
                   Appointment
+                </router-link>
+              </li>
+              <li>
+                <router-link class="text-black font-semibold transition hover:text-gray-500/75" to="/myappointment">
+                  My Appointment
                 </router-link>
               </li>
             </ul>

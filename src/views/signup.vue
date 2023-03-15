@@ -83,7 +83,7 @@ export default {
     }
   },
   mounted() {
-    if (document.cookie != "") {
+    if (localStorage.getItem('key') != null) {
       this.$router.push('/')
     }
   },

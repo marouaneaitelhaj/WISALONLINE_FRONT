@@ -73,14 +73,13 @@ export default {
   methods: {
     logout() {
       console.log("logout")
-      // how to delete cookie
-      document.cookie = "key=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+      localStorage.clear()
       this.$router.push('/')
       this.show = true
     }
   },
   mounted() {
-    if (document.cookie != "") {
+    if (localStorage.getItem('token') == null) {
       this.show = false
     }
   },

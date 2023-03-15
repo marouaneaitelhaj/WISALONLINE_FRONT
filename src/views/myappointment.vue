@@ -51,7 +51,7 @@ export default {
     }
   },
   mounted() {
-    if(document.cookie.split("=")[1] == undefined){
+    if(localStorage.getItem('key') == null){
       this.$router.push('/login')
     }
     this.read()

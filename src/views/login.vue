@@ -53,7 +53,7 @@ export default {
     }
   },
   mounted(){
-    if(document.cookie != ""){
+    if(localStorage.getItem('key') !== null){
       this.$router.push('/')
     }
   },
@@ -63,7 +63,7 @@ export default {
         .then(response => {
           console.log(response.data)
           if (response.data == 1) {
-            document.cookie = "key=" + this.key
+            localStorage.setItem('key', this.key)
             this.$router.push('/')
           } else {
             alert('Invalid Key')

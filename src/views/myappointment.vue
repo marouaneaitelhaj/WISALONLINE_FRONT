@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     read() {
-      axios.post('http://localhost/wiSalonline/public/FromKeyToId', [document.cookie.split("=")[1]])
+      axios.post('http://localhost/wiSalonline/public/FromKeyToId', [localStorage.getItem('key')])
         .then(response => {
           this.id = response.data[0].id
           axios.post('http://localhost/wiSalonline/public/api/RRappointments', [this.id])

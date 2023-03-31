@@ -36,15 +36,15 @@
               <option value="" selected hidden>Choose Hour</option>
               <option v-for="h in hour">{{ h }}</option>
             </select> -->
-            
+
             <div v-if="taken.hour.includes(h) && taken.client[taken.hour.indexOf(h)] == local" v-on:click="now(h)"
               class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg  p-4 bg-blue-200">
               {{ h }}
             </div>
             <div v-else-if="taken.hour.includes(h) && taken.client.includes(h) !== local" v-on:click="now(h)"
-                class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg  p-4 bg-red-200">
-                {{ h }}
-              </div>
+              class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg  p-4 bg-red-200">
+              {{ h }}
+            </div>
             <div v-if="!taken.hour.includes(h)" v-on:click="now(h)"
               class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg  p-4 bg-white">
               {{ h }}
@@ -89,9 +89,9 @@ export default {
   },
   mounted() {
     this.hour = ['9h - 10h', '10h - 11h', '11h - 12h', '14h - 15h', '15h - 16h', '16h - 17h', '17h - 18h', '18h - 19h', '19h - 20h']
-    if (localStorage.getItem('key') == null) {
-      this.$router.push('/login')
-    }
+    // if (localStorage.getItem('key') == null) {
+    //   this.$router.push('/login')
+    // }
     this.read()
     axios.post('http://localhost/wiSalonline/public/FromKeyToId', [localStorage.getItem('key')])
       .then(response => {
@@ -124,15 +124,20 @@ export default {
         })
     },
     now(hourselected) {
-      console.log(hourselected)
-      axios.post('http://localhost/wiSalonline/public/api/Cappointments', [this.day, hourselected, this.id, this.month])
-        .then(response => {
-          console.log(response)
-          this.read()
-          this.alertsuccess = true
-          setTimeout(this.alertshowFUNC, 3000)
-          this.hourselected = ''
-        })
+      if (this.taken.hour.includes(hourselected)) {
+        this.alerterror = true
+        setTimeout(this.alerterrorFUNC, 3000)
+        return
+      } else {
+        axios.post('http://localhost/wiSalonline/public/api/Cappointments', [this.day, hourselected, this.id, this.month])
+          .then(response => {
+            console.log(response)
+            this.read()
+            this.alertsuccess = true
+            setTimeout(this.alertshowFUNC, 3000)
+            this.hourselected = ''
+          })
+      }
     }
   },
   components: {

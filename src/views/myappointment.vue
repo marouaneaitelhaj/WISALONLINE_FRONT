@@ -51,9 +51,9 @@ export default {
     }
   },
   mounted() {
-    if(localStorage.getItem('key') == null){
-      this.$router.push('/login')
-    }
+    // if(localStorage.getItem('key') == null){
+    //   this.$router.push('/login')
+    // }
     this.read()
   },
   components: {
